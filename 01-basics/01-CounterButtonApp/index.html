@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>CounterButtonApp</title>
+    <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <div id="app">
-      <button type="button">0</button>
+      <button type="button" @click="plusOneCount()">{{ count }}</button>
     </div>
 
     <script type="module" src="script.js"></script>
