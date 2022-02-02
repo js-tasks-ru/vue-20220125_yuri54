@@ -20,7 +20,7 @@ import { defineComponent, createApp } from './vendor/vue.esm-browser.js';
     },
     computed: {
       result(){
-        return this.handleResult() > 0 && this.handleResult() !== Infinity ? this.handleResult() : 0
+        return (this.handleResult() > 0 || this.handleResult() < 0)  && this.handleResult() !== Infinity ? this.handleResult() : 0
       }
     },
     methods: {
