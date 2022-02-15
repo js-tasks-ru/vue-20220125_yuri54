@@ -32,19 +32,19 @@
       <div class="row">
         <div class="col">
           <input type="number"
-                 v-model="elementsCalculator.firstNum"
+                 v-model="firstNum"
           />
         </div>
 
         <div class="col" style="display: flex; flex-direction: column; font-family: emoji">
-          <label><input type="radio" value="sum" @click="changeOperation($event.target._value)" :checked="elementsCalculator.operations.sum" /> ➕</label>
-          <label><input type="radio" value="subtract" @click="changeOperation($event.target._value)" :checked="elementsCalculator.operations.subtract" /> ➖</label>
-          <label><input type="radio" value="multiply" @click="changeOperation($event.target._value)" :checked="elementsCalculator.operations.multiply" /> ✖</label>
-          <label><input type="radio" value="divide" @click="changeOperation($event.target._value)" :checked="elementsCalculator.operations.divide" /> ➗</label>
+          <label><input type="radio" value="sum" v-model.lazy="operator" /> ➕</label>
+          <label><input type="radio" value="subtract" v-model.lazy="operator" /> ➖</label>
+          <label><input type="radio" value="multiply" v-model.lazy="operator" /> ✖</label>
+          <label><input type="radio" value="divide" v-model.lazy="operator" /> ➗</label>
         </div>
 
         <div class="col">
-          <input type="number" v-model="elementsCalculator.secondNum"/>
+          <input type="number" v-model="secondNum"/>
         </div>
 
         <div class="col">=</div>
