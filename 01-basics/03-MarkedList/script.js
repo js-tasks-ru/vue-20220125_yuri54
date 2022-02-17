@@ -34,7 +34,6 @@ const emails = [
    name: 'Root',
    data() {
      return {
-       hello: 'world',
        filterString: '',
        emails,
      }
