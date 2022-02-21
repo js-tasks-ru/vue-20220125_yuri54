@@ -35,12 +35,22 @@ const emails = [
    data() {
      return {
        filterString: '',
-       emails,
+       emails
      }
    },
    computed: {
-     filterStringNew() {
-       return this.filterString === '' ? ' ' : this.filterString
+     emailsObj() {
+       return this.createEmailsObj();
+     }
+   },
+   methods: {
+     createEmailsObj() {
+       let obj = {}
+       let val = this.filterString
+       this.emails.forEach(function(item) {
+         obj[item] = item.includes(val) && val !== ''
+       });
+       return obj
      }
    }
  })
