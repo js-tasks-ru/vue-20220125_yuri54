@@ -25,7 +25,10 @@ export default defineComponent({
         month: 'long',
         day: 'numeric'
       } );
-    }
+    },
+    formatAsIsoDate(date) {
+      return new Date(date).toISOString().split('T')[0];
+    },
   },
 
   template: `
@@ -40,7 +43,7 @@ export default defineComponent({
       </li>
       <li>
         <img class="icon meetup-info__icon" alt="icon" src="/assets/icons/icon-cal-lg.svg" />
-        <time :datetime="formatLocalDate(date)">{{ formatLocalDate(date) }}</time>
+        <time :datetime="formatAsIsoDate(date)">{{ formatLocalDate(date) }}</time>
       </li>
     </ul>`,
 });
