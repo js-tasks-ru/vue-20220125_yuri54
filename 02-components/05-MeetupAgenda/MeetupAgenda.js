@@ -18,14 +18,8 @@ export default defineComponent({
   template: `
     <ul class="agenda">
       <li class="agenda__item">
-        <div>
-          <meetup-agenda-item :agenda-item="agenda[0]"></meetup-agenda-item>
-        </div>
-        <div>
-          <meetup-agenda-item :agenda-item="agenda[1]"></meetup-agenda-item>
-        </div>
-        <div>
-          <meetup-agenda-item :agenda-item="agenda[2]"></meetup-agenda-item>
+        <div v-for="agendaItem in agenda">
+          <meetup-agenda-item :agenda-item="agendaItem"></meetup-agenda-item>
         </div>
       </li>
     </ul>`,
